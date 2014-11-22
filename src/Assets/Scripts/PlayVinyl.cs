@@ -4,10 +4,11 @@ using System.Collections;
 public class PlayVinyl : MonoBehaviour {
 
 	public float rotSpeed; // degrees per second
-	public bool On = false;
+	public bool On;
 
 	// Use this for initialization
 	void Start () {
+		On = false;
 		rotSpeed = 90;
 	}
 	

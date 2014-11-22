@@ -11,7 +11,6 @@ public class HighlightOnHover : MonoBehaviour {
 	}
 	void OnMouseEnter()
 	{
-		print ("hover");
 		startcolor = renderer.material.color;
 		renderer.material.color = Color.yellow;
 	}
