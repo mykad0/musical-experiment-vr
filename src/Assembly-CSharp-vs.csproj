@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\DrawLine.cs" />
      <Compile Include="Assets\Scripts\HighlightOnHover.cs" />
      <Compile Include="Assets\Scripts\PlayVinyl.cs" />
+     <Compile Include="Assets\Scripts\SwitchMode.cs" />
      <Compile Include="Assets\Scripts\TextureModifier.cs" />
      <Compile Include="Assets\Scripts\TrackSelection.cs" />
   </ItemGroup>
