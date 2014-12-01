@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\PlayVinyl.cs" />
      <Compile Include="Assets\Scripts\TextureModifier.cs" />
      <Compile Include="Assets\Scripts\TrackSelection.cs" />
+     <Compile Include="Assets\Sequencer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
