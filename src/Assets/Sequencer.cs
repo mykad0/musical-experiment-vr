@@ -29,6 +29,6 @@ public class Sequencer : MonoBehaviour {
 	void OnTriggerExit (Collider other)
 	{
 		// Debug.Log("Object Exited the trigger");
-		renderer.material.color = Color.red;
+		renderer.material.color = Color.white;
 	}
 }
