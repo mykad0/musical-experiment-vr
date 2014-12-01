@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ListBox\ListBox.cs" />
      <Compile Include="Assets\Scripts\DrawLine.cs" />
      <Compile Include="Assets\Scripts\HighlightOnHover.cs" />
      <Compile Include="Assets\Scripts\PlayVinyl.cs" />
@@ -53,6 +54,36 @@
      <Compile Include="Assets\Scripts\TextureModifier.cs" />
      <Compile Include="Assets\Scripts\TrackSelection.cs" />
      <Compile Include="Assets\Sequencer.cs" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\MonoBehaviour.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Editor Window.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Function Call From Menu.js.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Scriptable Wizard.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Scriptable Object.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Empty Class.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\MonoBehaviour.functions.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Custom Editor.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Asset Postprocessor.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Empty Class.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Custom Editor.js.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\AssetPostprocessor.functions.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Empty Class.js.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Custom Editor.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\EditorWindow.functions.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\ScriptableWizard.functions.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Editor Window.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\ScriptableObject.functions.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Editor.functions.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\MonoBehaviour.js.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Scriptable Wizard.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Asset Postprocessor.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Asset Postprocessor.js.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Scriptable Wizard.js.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Scriptable Object.js.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Function Call From Menu.cs.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\MonoBehaviour.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Scriptable Object.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Function Call From Menu.boo.txt" />
+     <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\Editor Window.js.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
