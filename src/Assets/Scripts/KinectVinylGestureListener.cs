@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class VinylGestureListener : MonoBehaviour, KinectGestures.GestureListenerInterface {
+public class KinectVinylGestureListener : MonoBehaviour, KinectGestures.GestureListenerInterface {
 
 	public GUIText GestureInfo;
 	

@@ -4,13 +4,13 @@ using System.Collections;
 public class SwitchMode : MonoBehaviour {
 
 	public bool playMode;
-	VinylGestureListener gestureListener;
+	KinectVinylGestureListener gestureListener;
 	PlayVinyl play;
 
 	// Use this for initialization
 	void Start () {
 		playMode = true;
-		gestureListener = Camera.main.GetComponent<VinylGestureListener>();
+		gestureListener = Camera.main.GetComponent<KinectVinylGestureListener>();
 		play = GetComponentInParent<PlayVinyl> ();
 	}
 	
