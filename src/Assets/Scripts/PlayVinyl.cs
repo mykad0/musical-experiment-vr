@@ -21,4 +21,12 @@ public class PlayVinyl : MonoBehaviour {
 		
 		if( On ) { transform.Rotate (0, rotSpeed * Time.deltaTime, 0, Space.World); }
 	}
+
+	public void stopSpinning(){
+		On = false;
+	}
+
+	public void startSpinning(){
+		On = true;
+	}
 }

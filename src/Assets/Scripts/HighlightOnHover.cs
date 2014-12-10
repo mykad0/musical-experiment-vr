@@ -4,7 +4,9 @@ using System.Collections;
 public class HighlightOnHover : MonoBehaviour {
 
 	public Color startcolor;
-	public bool Lock = false;
+	public Color hovercolor;
+	public Color selectedcolor;
+	public bool selected = false;
 	
 	void OnInitialize()
 	{
@@ -13,20 +15,30 @@ public class HighlightOnHover : MonoBehaviour {
 
 	void OnMouseEnter()
 	{
-		startcolor = renderer.material.color;
-		renderer.material.color = Color.yellow;
+		if(!selected){
+			startcolor = renderer.material.color;
+			renderer.material.color = hovercolor;
+		}
 	}
 
 	void OnMouseDown()
 	{
-		renderer.material.color = Color.red;
-		Lock = !Lock;
+		if(!selected){
+			renderer.material.color = selectedcolor;
+		} else {
+			renderer.material.color = startcolor;
+		}
+		
+		selected = !selected;
 		 
 	}
 
 	void OnMouseExit()
 	{
-		renderer.material.color = startcolor;
+		if(!selected){
+			renderer.material.color = startcolor;
+		}
+		
 	}
 
 }
