@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -63,6 +63,7 @@ public class KinectVinylGestureListener : MonoBehaviour, KinectGestures.GestureL
 	// Returns true, if the gesture detection must be restarted, false otherwise
 	public bool GestureCompleted(uint userId, int userIndex, KinectGestures.Gestures gesture,
 	                      KinectWrapper.SkeletonJoint joint, Vector3 screenPos){
+		
 		string sGestureText = gesture + " detected";
 		if(GestureInfo != null)
 		{

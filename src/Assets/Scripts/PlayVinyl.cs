@@ -10,6 +10,7 @@ public class PlayVinyl : MonoBehaviour {
 	void Start () {
 		On = false;
 		rotSpeed = 90;
+		audio.Play ();
 	}
 	
 	// Update is called once per frame
