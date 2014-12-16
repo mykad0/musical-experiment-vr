@@ -11,13 +11,13 @@ Platform assembly: C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Tes
 Loading C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.052 seconds
+- Completed reload, in  0.045 seconds
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1280x800 60Hz; virtual: 3200x1080 at 0,0
+desktop: 1920x1080 60Hz; virtual: 3600x1080 at 0,0
 Platform assembly: C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\System.dll (this message is harmless)
-NuiInitialize Failed - Device is already in use.
+NuiInitialize Failed - Device is not connected.
  
 (Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
@@ -33,21 +33,4 @@ start
 Note#1 (UnityEngine.SphereCollider)
  
 (Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-<RI.Hid> Device is not supported: Rift DK2 (0003, 0x0005).
- 
-(Filename:  Line: 111)
-
-HandleD3DDeviceLost
-  HandleD3DDeviceLost: needs reset, doing it
-FullResetD3DDevice
-ResetD3DDevice
-dev->Reset
-D3D device reset failed [invalid call]
- 
-(Filename:  Line: 544)
-
-Skipped frame because GfxDevice is in invalid state (device lost)
- 
-(Filename:  Line: 1617)
 
