@@ -5,6 +5,8 @@ public class SwitchMode : MonoBehaviour {
 
 	public bool playMode;
 	public bool debug;
+	public float smoothFactor = 15f;
+	private bool moving = false;
 	KinectVinylGestureListener gestureListener;
 	PlayVinyl play;
 
@@ -29,14 +31,23 @@ public class SwitchMode : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.M)) {
 				if (playMode) {
 					play.stopSpinning();
-					transform.Rotate (-90, 0, 0, Space.World);
-					transform.Translate (0, 2, 2, Space.World);
+					//Quaternion rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+					//rotation *= Quaternion.Euler(0,-90,0);
+					//transform.rotation = Quaternion.Slerp(transform.rotation, rotation, smoothFactor*Time.deltaTime);
+					if(!moving){
+						StartCoroutine(MoveToWriting());
+					}
+					//transform.Rotate (-90, 0, 0, Space.World);
+					//transform.Translate (0, 2, 2, Space.World);
 					playMode = ! playMode;
 				} else {
-					transform.Rotate (90, 0, 0, Space.World);
-					transform.Translate (0, -2, -2, Space.World);
+					//transform.Rotate (90, 0, 0, Space.World);
+					//transform.Translate (0, -2, -2, Space.World);
+					
+					if(!moving){
+						StartCoroutine(MoveToPlay());
+					}
 					playMode = ! playMode;
-					play.startSpinning();
 				}
 			}
 
@@ -50,7 +61,6 @@ public class SwitchMode : MonoBehaviour {
 
 			if (gestureListener.IsSwipeUp()) {
 				if (playMode) {
-					play.stopSpinning();
 					transform.Rotate (-90, 0, 0, Space.World);
 					transform.Translate (0, 2, 2, Space.World);
 					playMode = ! playMode;
@@ -60,9 +70,47 @@ public class SwitchMode : MonoBehaviour {
 					transform.Rotate (90, 0, 0, Space.World);
 					transform.Translate (0, -2, -2, Space.World);
 					playMode = ! playMode;
-					play.startSpinning();
 				}
 			}
 		}
+	}
+
+	IEnumerator MoveToPlay (){
+		moving = true; // MoveObject started
+		float i = 0;
+		while (i < 1) {
+			i += smoothFactor*Time.deltaTime;
+
+			Quaternion startRot = transform.rotation;
+			Quaternion endRot = Quaternion.AngleAxis(90, Vector3.up);
+			Vector3 startPos = transform.position;
+			Vector3 endPos = new Vector3(0,0,0);
+
+			transform.rotation = Quaternion.Slerp(startRot, endRot, i);
+			transform.position = Vector3.Lerp(startPos, endPos, i);
+			yield return 0;
+		}
+		moving = false; // MoveObject ended
+		play.startSpinning();
+	}
+
+
+	IEnumerator MoveToWriting (){
+		moving = true; // MoveObject started
+		float i = 0;
+		play.stopSpinning();
+		while (i < 1) {
+			i += smoothFactor*Time.deltaTime;
+
+			Quaternion startRot = transform.rotation;
+			Quaternion endRot = Quaternion.AngleAxis(-90, Vector3.right);
+			Vector3 startPos = transform.position;
+			Vector3 endPos = new Vector3(0,10,10);
+
+			transform.rotation = Quaternion.Slerp(startRot, endRot, i);
+			transform.position = Vector3.Lerp(startPos, endPos, i);
+			yield return 0;
+		}
+		moving = false; // MoveObject ended
 	}
 }

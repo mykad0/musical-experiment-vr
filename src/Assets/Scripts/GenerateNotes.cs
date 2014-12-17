@@ -8,12 +8,15 @@ public class GenerateNotes : MonoBehaviour {
 	public float radius;
 	private int noteNumber = 1;
 	private GameObject note;
+	private float coefMult = 11;
+	private float offset = 0.15f;
 
 	// Use this for initialization
 	void Start () {
 		//float stepAngle = 360/nbNotes;
 		//float angle = 0;
-
+		radius *= coefMult;
+		radius -= offset;
 		note = GameObject.Find("Note#0");
 		for(int i=0;i<nbNotes;i++){
 			//float x = (radius*Mathf.Cos(angle));
@@ -22,7 +25,7 @@ public class GenerateNotes : MonoBehaviour {
 	        Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, y, Mathf.Sin(angle) * radius);
 	       	//GameObject notetmp = (GameObject) Instantiate(note, new Vector3(x, y, z), Quaternion.identity);
 			GameObject notetmp = (GameObject) Instantiate(note, pos, Quaternion.identity);
-			notetmp.name = "GenNote#"+noteNumber;
+			notetmp.name = "Note#"+noteNumber;
 			notetmp.transform.parent = gameObject.transform;
 			//angle = angle + stepAngle;
 			noteNumber++;
