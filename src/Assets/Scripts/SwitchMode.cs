@@ -4,6 +4,7 @@ using System.Collections;
 public class SwitchMode : MonoBehaviour {
 
 	public bool playMode;
+	public bool debug;
 	KinectVinylGestureListener gestureListener;
 	PlayVinyl play;
 
@@ -14,30 +15,54 @@ public class SwitchMode : MonoBehaviour {
 		play = GetComponentInParent<PlayVinyl> ();
 	}
 	
+	bool ToPlayMode(){
+		return true;
+	}
+
+	bool ToWritingMode(){
+		return false;
+	}
+
 	// Update is called once per frame
 	void Update () {
-				//Check if user is connected
-				KinectManager kinectManager = KinectManager.Instance;
-				if (!kinectManager
-						|| !kinectManager.IsInitialized ()
-						|| !kinectManager.IsUserDetected ())
-						return;
-
-				if (gestureListener.IsSwipeUp()) {
-						if (playMode) {
-								play.stopSpinning();
-								transform.Rotate (-90, 0, 0, Space.World);
-								transform.Translate (0, 2, 2, Space.World);
-								playMode = ! playMode;
-						} 
-				} else if (gestureListener.IsSwipeDown()) {
-						if (!playMode) {
-								transform.Rotate (90, 0, 0, Space.World);
-								transform.Translate (0, -2, -2, Space.World);
-								playMode = ! playMode;
-								play.startSpinning();
-						}
+		if(debug){
+			if (Input.GetKeyDown(KeyCode.M)) {
+				if (playMode) {
+					play.stopSpinning();
+					transform.Rotate (-90, 0, 0, Space.World);
+					transform.Translate (0, 2, 2, Space.World);
+					playMode = ! playMode;
+				} else {
+					transform.Rotate (90, 0, 0, Space.World);
+					transform.Translate (0, -2, -2, Space.World);
+					playMode = ! playMode;
+					play.startSpinning();
 				}
+			}
 
+		} else {
+			//Check if user is connected
+			KinectManager kinectManager = KinectManager.Instance;
+			if (!kinectManager
+				|| !kinectManager.IsInitialized ()
+				|| !kinectManager.IsUserDetected ())
+				return;
+
+			if (gestureListener.IsSwipeUp()) {
+				if (playMode) {
+					play.stopSpinning();
+					transform.Rotate (-90, 0, 0, Space.World);
+					transform.Translate (0, 2, 2, Space.World);
+					playMode = ! playMode;
+				} 
+			} else if (gestureListener.IsSwipeDown()) {
+				if (!playMode) {
+					transform.Rotate (90, 0, 0, Space.World);
+					transform.Translate (0, -2, -2, Space.World);
+					playMode = ! playMode;
+					play.startSpinning();
+				}
+			}
 		}
+	}
 }

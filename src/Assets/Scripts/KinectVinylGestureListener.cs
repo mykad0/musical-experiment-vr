@@ -74,10 +74,9 @@ public class KinectVinylGestureListener : MonoBehaviour, KinectGestures.GestureL
 			swipeUp = true;
 		else if(gesture == KinectGestures.Gestures.SwipeDown)
 			swipeDown = true;
-		
+	
 		return true;
-			return true;
-		}
+	}
 	
 	// Invoked if a gesture is cancelled.
 	// Returns true, if the gesture detection must be retarted, false otherwise
