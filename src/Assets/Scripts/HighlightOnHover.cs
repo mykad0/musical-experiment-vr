@@ -20,7 +20,7 @@ public class HighlightOnHover : MonoBehaviour {
 	{
 		if(!selected){
 			renderer.material.color = hovercolor;
-			GetComponentInParent<AudioSource>().Play();
+			//GetComponentInParent<AudioSource>().Play();
 		}
 	}
 

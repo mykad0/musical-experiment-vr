@@ -126,6 +126,8 @@ public class OVRCrosshair
 			// Do not do these tests within OnGUI since they will be called twice
 			CollisionWithGeometryCheck();
 		}
+
+
 	}
 	
 	/// <summary>
@@ -211,11 +213,13 @@ public class OVRCrosshair
 	/// <returns><c>true</c>, if display crosshair was shoulded, <c>false</c> otherwise.</returns>
 	bool ShouldDisplayCrosshair()
 	{	
+		/* Custom Override */
 		if(Input.GetKeyDown (CrosshairKey))
 		{
+			Debug.Log("cross");
 			if(DisplayCrosshair == false)
 			{
-				Debug.Log("cross");
+				 
 				DisplayCrosshair = true;
 				
 				// Always initialize screen location of cursor to center
@@ -239,13 +243,21 @@ public class OVRCrosshair
 		
 		Vector3 startPos = UIAnchor.position;
 		Vector3 dir = Vector3.forward;
-		dir = UIAnchor.rotation * dir;
+		dir = UIAnchor.rotation * dir * 12;
 		dir *= CrosshairDistance;
 		Vector3 endPos = startPos + dir;
-		
 		RaycastHit hit;
+
+		Debug.DrawRay(startPos, dir, Color.green);
+
 		if (Physics.Linecast(startPos, endPos, out hit))
 		{
+			// Debug.Log(hit.collider.name);
+			if(hit.collider.tag == "Note")
+			{
+				Debug.Log("note");
+			}
+
 			if (!hit.collider.isTrigger)
 			{
 				CollisionWithGeometry = true;

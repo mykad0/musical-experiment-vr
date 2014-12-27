@@ -26,6 +26,7 @@ public class GenerateNotes : MonoBehaviour {
 	       	//GameObject notetmp = (GameObject) Instantiate(note, new Vector3(x, y, z), Quaternion.identity);
 			GameObject notetmp = (GameObject) Instantiate(note, pos, Quaternion.identity);
 			notetmp.name = "Note#"+noteNumber;
+			notetmp.tag = "Note";
 			notetmp.transform.parent = gameObject.transform;
 			//angle = angle + stepAngle;
 			noteNumber++;
