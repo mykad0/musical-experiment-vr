@@ -18,14 +18,9 @@ public class Sequencer : MonoBehaviour {
 	// Collision with other GameObjectsCollider
 	void OnTriggerEnter (Collider other)
 	{
-		//Debug.Log(other);
+		// Debug.Log(other);
 		other.renderer.material.color = Color.cyan;
 		//other.audio.Play ();
-	}
-
-	void OnTriggerStay (Collider other)
-	{
-		// Debug.Log("Object is within the trigger");
 	}
 
 	void OnTriggerExit (Collider other)

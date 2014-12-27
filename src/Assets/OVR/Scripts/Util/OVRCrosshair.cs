@@ -190,7 +190,7 @@ public class OVRCrosshair
 			bool skipMouseRotation = true;
 			if(PlayerController != null)
 				PlayerController.GetSkipMouseRotation(ref skipMouseRotation);
-		
+
 			if(skipMouseRotation == true)
 			{
 				// Left
@@ -240,23 +240,50 @@ public class OVRCrosshair
 	bool CollisionWithGeometryCheck()
 	{
 		CollisionWithGeometry = false;
-		
+				 
+		 
+
 		Vector3 startPos = UIAnchor.position;
 		Vector3 dir = Vector3.forward;
 		dir = UIAnchor.rotation * dir * 12;
 		dir *= CrosshairDistance;
 		Vector3 endPos = startPos + dir;
 		RaycastHit hit;
+ 
 
-		Debug.DrawRay(startPos, dir, Color.green);
+			Vector3 mouse = Input.mousePosition;
+			mouse.z = 10f;
+			mouse = Camera.main.ScreenToWorldPoint(mouse);
+
+			Ray ray = Camera.main.ScreenPointToRay(mouse);
+	 
+			Debug.DrawRay(startPos, mouse, Color.green);
+			Debug.Log(mouse);
+
+	        if(Physics.Raycast(ray,out hit, 1000))
+	        { 
+	        	GameObject SelectedGameObject = hit.collider.gameObject;
+
+				if(hit.collider.tag == "Note")
+				{
+					Debug.DrawLine(ray.origin, hit.point, Color.red);			
+					Debug.Log("note");
+					hit.collider.transform.localScale = new Vector3(.05f, 50.0f, .05f);
+				}
+	        } 
+        
+
+
+
+		// Debug.DrawLine(startPos, endPos, Color.yellow);
 
 		if (Physics.Linecast(startPos, endPos, out hit))
 		{
-			// Debug.Log(hit.collider.name);
+			/*Debug.Log(hit.collider.name);
 			if(hit.collider.tag == "Note")
 			{
 				Debug.Log("note");
-			}
+			}*/
 
 			if (!hit.collider.isTrigger)
 			{
@@ -264,6 +291,8 @@ public class OVRCrosshair
 			}
 		}
 		
+
+
 		return CollisionWithGeometry;
 	}
 	#endregion
