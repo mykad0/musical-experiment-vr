@@ -250,28 +250,37 @@ public class OVRCrosshair
 		Vector3 endPos = startPos + dir;
 		RaycastHit hit;
  
+ 		/* Get Reticle Position */
+		//Debug.DrawLine(startPos,mouse)
+		Vector3 reticl = new Vector3(XL,YL,CrosshairDistance);
+		reticl = Camera.main.ScreenToWorldPoint(reticl);
+		
 
-			Vector3 mouse = Input.mousePosition;
-			mouse.z = 10f;
-			mouse = Camera.main.ScreenToWorldPoint(mouse);
+		/* Translate mouse to world */
+		Vector3 mouse = Input.mousePosition;
+		mouse.z = 10f;
+		mouse = Camera.main.ScreenToWorldPoint(mouse);
 
-			Ray ray = Camera.main.ScreenPointToRay(mouse);
-	 
-			Debug.DrawRay(startPos, mouse, Color.green);
-			Debug.Log(mouse);
+		Ray ray = Camera.main.ScreenPointToRay(mouse);
 
-	        if(Physics.Raycast(ray,out hit, 1000))
-	        { 
-	        	GameObject SelectedGameObject = hit.collider.gameObject;
+		/* Debug */
+		Debug.DrawRay(reticl, mouse, Color.red);
+		Debug.Log("mouse" + mouse);
+		Debug.Log("ret" + reticl);
 
-				if(hit.collider.tag == "Note")
-				{
-					Debug.DrawLine(ray.origin, hit.point, Color.red);			
-					Debug.Log("note");
-					hit.collider.transform.localScale = new Vector3(.05f, 50.0f, .05f);
-				}
-	        } 
-        
+		/* Raycast 
+		if(Physics.Raycast(ray,out hit, 1000))
+		{ 
+			GameObject SelectedGameObject = hit.collider.gameObject;
+
+			if(hit.collider.tag == "Note")
+			{
+				Debug.DrawLine(ray.origin, hit.point, Color.red);			
+				Debug.Log("note");
+				hit.collider.transform.localScale = new Vector3(.05f, 50.0f, .05f);
+			}
+		} */
+
 
 
 
