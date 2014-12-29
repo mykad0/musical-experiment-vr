@@ -155,7 +155,7 @@ public class OVRCrosshair
 				PlayerController.SetSkipMouseRotation(true);
 
 			GUI.color = new Color(1, 1, 1, FadeVal * FadeScale);
-			
+		 
 			// Calculate X
 			XL += Input.GetAxis("Mouse X") * ScaleSpeedX;
 			if(XL < DeadZoneX) 
@@ -190,15 +190,17 @@ public class OVRCrosshair
 			bool skipMouseRotation = true;
 			if(PlayerController != null)
 				PlayerController.GetSkipMouseRotation(ref skipMouseRotation);
-
+ 
 			if(skipMouseRotation == true)
-			{
+			{ 
 				// Left
 				GUI.DrawTexture(new Rect(	XL - (ImageCrosshair.width * 0.5f),
 					                     	YL - (ImageCrosshair.height * 0.5f), 
 											ImageCrosshair.width,
 											ImageCrosshair.height), 
 											ImageCrosshair);
+ 
+				 
 			}
 				
 			GUI.color = Color.white;
@@ -250,25 +252,18 @@ public class OVRCrosshair
 		Vector3 endPos = startPos + dir;
 		RaycastHit hit;
  
- 		/* Get Reticle Position */
-		//Debug.DrawLine(startPos,mouse)
-		Vector3 reticl = new Vector3(XL,YL,CrosshairDistance);
-		reticl = Camera.main.ScreenToWorldPoint(reticl);
-		
+		/* Debug */
+		// Debug.DrawRay( a,b , Color.red);
+		// Debug.Log("ret" + Cross);
 
-		/* Translate mouse to world */
+		/* Raycast 
+
 		Vector3 mouse = Input.mousePosition;
 		mouse.z = 10f;
 		mouse = Camera.main.ScreenToWorldPoint(mouse);
 
 		Ray ray = Camera.main.ScreenPointToRay(mouse);
 
-		/* Debug */
-		Debug.DrawRay(reticl, mouse, Color.red);
-		Debug.Log("mouse" + mouse);
-		Debug.Log("ret" + reticl);
-
-		/* Raycast 
 		if(Physics.Raycast(ray,out hit, 1000))
 		{ 
 			GameObject SelectedGameObject = hit.collider.gameObject;
@@ -280,9 +275,6 @@ public class OVRCrosshair
 				hit.collider.transform.localScale = new Vector3(.05f, 50.0f, .05f);
 			}
 		} */
-
-
-
 
 		// Debug.DrawLine(startPos, endPos, Color.yellow);
 

@@ -9,8 +9,7 @@ public class PlayVinyl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		On = false;
-		rotSpeed = 90;
-		audio.Play ();
+		rotSpeed = 90;	
 	}
 	
 	// Update is called once per frame
@@ -18,6 +17,7 @@ public class PlayVinyl : MonoBehaviour {
 		// User Input
 		if ( Input.GetKeyDown(KeyCode.Space) ) {
 			On = !On;
+			audio.Play ();
 		}
 		
 		if( On ) { transform.Rotate (0, rotSpeed * Time.deltaTime, 0, Space.World); }
