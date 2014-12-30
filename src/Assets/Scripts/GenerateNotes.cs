@@ -24,12 +24,19 @@ public class GenerateNotes : MonoBehaviour {
 			float angle = i * Mathf.PI * 2 / nbNotes;
 	        Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, y, Mathf.Sin(angle) * radius);
 	       	//GameObject notetmp = (GameObject) Instantiate(note, new Vector3(x, y, z), Quaternion.identity);
+			
+			/* Instanciation */
 			GameObject notetmp = (GameObject) Instantiate(note, pos, Quaternion.identity);
 			notetmp.name = "Note#"+noteNumber;
-			notetmp.tag = "Note";
 			notetmp.transform.parent = gameObject.transform;
-			//angle = angle + stepAngle;
 			noteNumber++;
+			//angle = angle + stepAngle;
+
+			/* Interaction */
+			notetmp.tag = "Note";
+			AudioSource audioSource = notetmp.AddComponent<AudioSource>();
+			audioSource.clip = Resources.Load<AudioClip>("F1") as AudioClip;
+			 
 		}
 	}
 	

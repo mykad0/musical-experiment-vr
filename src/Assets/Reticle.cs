@@ -15,6 +15,9 @@ public class Reticle : MonoBehaviour {
 		transform.LookAt(CameraFacing.transform.position);
 		transform.Rotate(0.0f, 180.0f, 0.0f);
 
+	 
+		
+
 		RaycastHit hit;
 		Ray ray = new Ray(CameraFacing.transform.position,CameraFacing.transform.rotation * Vector3.forward * 10.0f);
 		float distance;
@@ -23,11 +26,20 @@ public class Reticle : MonoBehaviour {
 
 		if (Physics.Raycast( ray, out hit))
 		{
+			/* If a note is hit by the ray */
 			if(hit.collider.tag == "Note")
 			{
-				Debug.Log(hit.collider.name);
-				Debug.Log("note");
+
+				GameObject Note = hit.collider.gameObject;
+
+				Debug.Log(hit.collider.name);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 				Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.yellow, 5);
+
+				if (Input.GetMouseButtonDown(0))
+				{
+					Note.audio.Play();
+					Debug.Log("teub");
+				}
 			} 
 		}
 	}
