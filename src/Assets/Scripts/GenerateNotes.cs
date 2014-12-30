@@ -18,12 +18,11 @@ public class GenerateNotes : MonoBehaviour {
 		radius *= coefMult;
 		radius -= offset;
 		note = GameObject.Find("Note#0");
+		
 		for(int i=0;i<nbNotes;i++){
-			//float x = (radius*Mathf.Cos(angle));
-			//float z = (radius*Mathf.Sin(angle));
+
 			float angle = i * Mathf.PI * 2 / nbNotes;
-	        Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, y, Mathf.Sin(angle) * radius);
-	       	//GameObject notetmp = (GameObject) Instantiate(note, new Vector3(x, y, z), Quaternion.identity);
+	        Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, y, Mathf.Sin(angle) * radius);	       	 
 			
 			/* Instanciation */
 			GameObject notetmp = (GameObject) Instantiate(note, pos, Quaternion.identity);
@@ -35,6 +34,7 @@ public class GenerateNotes : MonoBehaviour {
 			/* Interaction */
 			notetmp.tag = "Note";
 			AudioSource audioSource = notetmp.AddComponent<AudioSource>();
+			if(i%5 == 0)
 			audioSource.clip = Resources.Load<AudioClip>("F1") as AudioClip;
 			 
 		}

@@ -15,7 +15,7 @@ Platform assembly: C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Tes
 Loading C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\Isaac\Documents\GitHub\musical-experiment-vr\src\Test_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.078 seconds
+- Completed reload, in  0.079 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 3200x1080 at 0,0
@@ -30,19 +30,44 @@ System.Exception: NuiInitialize Failed
  
 (Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-A game object can only be in one layer. The layer needs to be in the range [0...31]
- 
-(Filename:  Line: 700)
-
-A game object can only be in one layer. The layer needs to be in the range [0...31]
- 
-(Filename:  Line: 700)
-
-cross
+start
  
 (Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-note
+A game object can only be in one layer. The layer needs to be in the range [0...31]
+ 
+(Filename:  Line: 700)
+
+Note#1 (UnityEngine.SphereCollider)
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Note#1 (UnityEngine.SphereCollider)
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Note#1 (UnityEngine.SphereCollider)
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Note#0 (UnityEngine.SphereCollider)
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Sequencer.OnTriggerEnter (UnityEngine.Collider other) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Note#1 (UnityEngine.SphereCollider)
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+A game object can only be in one layer. The layer needs to be in the range [0...31]
+ 
+(Filename:  Line: 700)
+
+Note#25 (UnityEngine.SphereCollider)
  
 (Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 

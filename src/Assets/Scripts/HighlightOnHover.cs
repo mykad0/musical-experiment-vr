@@ -6,13 +6,13 @@ public class HighlightOnHover : MonoBehaviour {
 	public Color startcolor;
 	public Color hovercolor;
 	public Color selectedcolor;
+	public bool hovered = false;
 	public bool selected = false;
 	private HighlightOnHover[] allTracksProps;
 	
 	void Start()
 	{
 		allTracksProps = gameObject.transform.parent.gameObject.GetComponentsInChildren<HighlightOnHover>();
-		//Debug.Log(allTracksProps[0]);
 		startcolor = renderer.material.color;
 	}
 
@@ -20,7 +20,6 @@ public class HighlightOnHover : MonoBehaviour {
 	{
 		if(!selected){
 			renderer.material.color = hovercolor;
-			//GetComponentInParent<AudioSource>().Play();
 		}
 	}
 
@@ -43,6 +42,16 @@ public class HighlightOnHover : MonoBehaviour {
 		}
 		
 	}
+	/*
+	void Hover() {
+		hovered = true;
+		renderer.material.color = hovercolor;
+	}
+
+	void Unhover() {
+		hovered = false;
+		renderer.material.color = hovercolor;
+	}*/
 
 	void Select(){
 		selected = true;
