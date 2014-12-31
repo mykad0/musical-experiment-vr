@@ -92,6 +92,11 @@
      <Compile Include="Assets\Scripts\Sequencer.cs" />
      <Compile Include="Assets\Scripts\SpectrumAnalyser.cs" />
      <Compile Include="Assets\Scripts\SwitchMode.cs" />
+     <Compile Include="Assets\Scripts\coolviz\cubeMove.cs" />
+     <Compile Include="Assets\Scripts\coolviz\headBobbing.cs" />
+     <Compile Include="Assets\Scripts\coolviz\musicScript.cs" />
+     <Compile Include="Assets\Scripts\coolviz\particleScript.cs" />
+     <Compile Include="Assets\Scripts\coolviz\playerMove.cs" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\MonoBehaviour.cs.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
