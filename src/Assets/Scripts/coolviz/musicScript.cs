@@ -39,10 +39,13 @@ public class musicScript : MonoBehaviour {
 	void Update ()
 	{
 		rms = 0.0f;
-		if (Input.GetButtonDown("Fire1") && _mySource.isPlaying == true)
+		/*
+		if (Input.GetKeyDown(KeyCode.Space) && _mySource.isPlaying == true)
 			_mySource.Pause();
-		else if (Input.GetButtonDown("Fire1") && _mySource.isPlaying == false)
+		else if (Input.GetKeyDown(KeyCode.Space) && _mySource.isPlaying == false)
 			_mySource.Play();
+		*/
+
 		_mySource.GetOutputData(_samples1, 0);
 		_mySource.GetOutputData(_samples2, 1);
 		_mySource.GetSpectrumData(_spectrum, 0, FFTWindow.Rectangular);

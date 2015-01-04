@@ -26,17 +26,15 @@ public class GenerateNotes : MonoBehaviour {
 			
 			/* Instanciation */
 			GameObject notetmp = (GameObject) Instantiate(note, pos, Quaternion.identity);
-			notetmp.name = "Note#"+noteNumber;
+			notetmp.name = "Note#"+noteNumber+transform.collider.name;
 			notetmp.transform.parent = gameObject.transform;
 			noteNumber++;
 			//angle = angle + stepAngle;
 
 			/* Interaction */
 			notetmp.tag = "Note";
-			AudioSource audioSource = notetmp.AddComponent<AudioSource>();
-			if(i%5 == 0)
-			audioSource.clip = Resources.Load<AudioClip>("F1") as AudioClip;
-			 
+			/* AudioSource audioSource = notetmp.AddComponent<AudioSource>();
+			audioSource.clip = Resources.Load<AudioClip>("F1") as AudioClip; */
 		}
 	}
 	

@@ -30,7 +30,7 @@ public class Reticle : MonoBehaviour {
 			if(hit.collider.tag == "Track") 
 			{
 				/* Debug */	      
-				Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.cyan, 1);
+				// Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.cyan, 1);
 				// Debug.Log(hit.collider.name);       
 
 				/* Handle Mouse Simulation, might consider caching all the track gameObjects for performance */
@@ -52,23 +52,18 @@ public class Reticle : MonoBehaviour {
 
 			/* If a note is hit by the ray */
 			if(hit.collider.tag == "Note")
-			{
-				// Debug.Log(hit.collider.name);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-				Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.yellow, 5);
+			{             
+				// Debug.Log(hit.collider.name);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+				// Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.yellow, 2);
 
 				if (Input.GetMouseButtonDown(0))
 				{
-					// hit.collider.gameObject.audio.Play();
+					// Debug.Log(hit.collider.name);
+					hit.collider.gameObject.audio.Play();
 					/* Might consider caching all the note gameObjects for performance */
-					// GameObject.Find(hit.collider.name).SendMessage("HandleNote");
+					GameObject.Find(hit.collider.name).GetComponent("NoteBehaviour").SendMessage("ActivateNote", SendMessageOptions.DontRequireReceiver);
 				}
 			} 
 		}
-	}
-
- 	 
-	/* Note Message */
-	void HandleNote() {
-		audio.Play();
 	}
 }

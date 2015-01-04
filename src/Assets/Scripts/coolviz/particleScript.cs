@@ -2,11 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class particleScript : MonoBehaviour {
-	public	AudioSource					mySource;			// The principal AudioSource in the scene
+	
 	public	Material					particleMaterial;	// The material with a random color
 	public	float						timeModulo;			// The number of seconds between 2 random color
 	public	int							colorPrecision;		// The precision of the random color
 
+	private	AudioSource					mySource;			// The principal AudioSource in the scene
 	private	ParticleSystem.Particle		[]_particles;		// Array of particles
 	private	int							_size;				// The number of particles of this ParticleSystem
 	private	Color						_randomColor;
@@ -16,7 +17,8 @@ public class particleScript : MonoBehaviour {
 	
 	void Start ()
 	{
-		_musicScript = mySource.GetComponent<musicScript> ();
+		mySource = gameObject.GetComponentInParent<AudioSource> ();
+		_musicScript = gameObject.GetComponentInParent<musicScript> ();
 		_randomColor = new Color((float)Random.Range(0, colorPrecision) / (float)colorPrecision, (float)Random.Range(0, colorPrecision) / (float)colorPrecision, (float)Random.Range(0, colorPrecision) / (float)colorPrecision, 1.0f);
 		_myParticles = this.GetComponent<ParticleSystem> ();
 	}

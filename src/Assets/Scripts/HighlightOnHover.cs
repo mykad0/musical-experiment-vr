@@ -25,6 +25,7 @@ public class HighlightOnHover : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		audio.Play();
 		if(!selected){
 			foreach(HighlightOnHover trackProps in allTracksProps){
 				trackProps.Unselect();
@@ -42,16 +43,6 @@ public class HighlightOnHover : MonoBehaviour {
 		}
 		
 	}
-	/*
-	void Hover() {
-		hovered = true;
-		renderer.material.color = hovercolor;
-	}
-
-	void Unhover() {
-		hovered = false;
-		renderer.material.color = hovercolor;
-	}*/
 
 	void Select(){
 		selected = true;
