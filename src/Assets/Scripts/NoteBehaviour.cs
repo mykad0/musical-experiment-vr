@@ -26,27 +26,27 @@ public class NoteBehaviour : MonoBehaviour {
 		string name = transform.collider.name.Substring(a);
 		Debug.Log(name);
 
-		
-			if(name == "Track#1") {
-				audioSource.clip = Resources.Load<AudioClip>("Hat") as AudioClip;
-			}	
-			else if( name == "Track#2") {
-				audioSource.clip = Resources.Load<AudioClip>("Snare") as AudioClip;
-			}
-			else if( name == "Track#3") {
-				audioSource.clip = Resources.Load<AudioClip>("Clap") as AudioClip;
-			}
-			else if(name == "Track#4") {
-				audioSource.clip = Resources.Load<AudioClip>("KickDrum") as AudioClip;
-			}
+		if(name == "Track#1") {
+			audioSource.clip = Resources.Load<AudioClip>("Hat") as AudioClip;
+		}	
+		else if( name == "Track#2") {
+			audioSource.clip = Resources.Load<AudioClip>("Snare") as AudioClip;
+		}
+		else if( name == "Track#3") {
+			audioSource.clip = Resources.Load<AudioClip>("Clap") as AudioClip;
+		}
+		else if(name == "Track#4") {
+			audioSource.clip = Resources.Load<AudioClip>("KickDrum") as AudioClip;
+		}
 
-			if(activated){
-				activated = false;
-				renderer.material.color = startColor;
-			}
-			else {
-				activated = true;
-				renderer.material.color = activatedColor;
-			}
+		if(activated){
+			activated = false;
+			renderer.material.color = startColor;
+		}
+		else {
+			Destroy(transform.collider.gameObject.audio.clip);
+			activated = true;
+			renderer.material.color = activatedColor;
+		}
 	}	
 }
