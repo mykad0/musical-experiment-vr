@@ -24,7 +24,7 @@ public class GenerateNotes : MonoBehaviour {
 			float angle = i * Mathf.PI * 2 / nbNotes;
 	        Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, y, Mathf.Sin(angle) * radius);	       	 
 			
-			/* Instanciation */
+			/* Instantiation */
 			GameObject notetmp = (GameObject) Instantiate(note, pos, Quaternion.identity);
 			notetmp.name = "Note#"+noteNumber+transform.collider.name;
 			notetmp.transform.parent = gameObject.transform;
@@ -33,8 +33,21 @@ public class GenerateNotes : MonoBehaviour {
 
 			/* Interaction */
 			notetmp.tag = "Note";
-			/* AudioSource audioSource = notetmp.AddComponent<AudioSource>();
-			audioSource.clip = Resources.Load<AudioClip>("F1") as AudioClip; */
+			AudioSource audioSource = notetmp.AddComponent<AudioSource>();
+			audioSource.mute = true;
+
+			if( transform.collider.name == "Track#1") {
+				audioSource.clip = Resources.Load<AudioClip>("VIHat") as AudioClip;
+			}	
+			else if( transform.collider.name == "Track#2") {
+				audioSource.clip = Resources.Load<AudioClip>("VISnare") as AudioClip;
+			}
+			else if( transform.collider.name == "Track#3") {
+				audioSource.clip = Resources.Load<AudioClip>("VIclap") as AudioClip;
+			}
+			else if( transform.collider.name == "Track#4") {
+				audioSource.clip = Resources.Load<AudioClip>("VIKick") as AudioClip;
+			}
 		}
 	}
 	

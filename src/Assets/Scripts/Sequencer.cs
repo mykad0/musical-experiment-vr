@@ -19,7 +19,7 @@ public class Sequencer : MonoBehaviour {
 	void OnTriggerEnter (Collider other)
 	{
 		// Debug.Log(other);
-		other.renderer.material.color = Color.yellow;
+		 
 		other.audio.Play();
 	}
 

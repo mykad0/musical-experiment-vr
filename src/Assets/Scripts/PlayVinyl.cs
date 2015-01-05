@@ -6,12 +6,16 @@ public class PlayVinyl : MonoBehaviour {
 	public float rotSpeed; // degrees per second
 	public bool On;
 	public bool writing;
+
+	public int trackplaying;
 	
 
 	// Use this for initialization
 	void Start () {
 		On = false;
 		writing = false;
+		trackplaying = 1;
+		loadTrack();
 	}
 	
 	// Update is called once per frame
@@ -39,10 +43,27 @@ public class PlayVinyl : MonoBehaviour {
 
 	}
 
+	public void loadTrack() {
+		if(trackplaying == 1)
+		{	
+			transform.collider.gameObject.audio.clip = Resources.Load<AudioClip>("Tank!") as AudioClip;
+		}
+		else
+		{
+			transform.collider.gameObject.audio.clip = Resources.Load<AudioClip>("Loop") as AudioClip;
+		}
+	}
+
+	public void changeTrack() {
+		if(trackplaying == 1) { trackplaying = 2;}
+		else { trackplaying = 1; }
+		loadTrack();
+	}
+
 	public void stopSpinning(){
 		On = false;
 		writing = true;
-		audio.Pause();
+		audio.Stop();
 	}
 
 	public void startSpinning(){

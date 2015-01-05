@@ -30,7 +30,7 @@ public class Reticle : MonoBehaviour {
 			if(hit.collider.tag == "Track") 
 			{
 				/* Debug */	      
-				// Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.cyan, 1);
+			  Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.cyan, 1);
 				// Debug.Log(hit.collider.name);       
 
 				/* Handle Mouse Simulation, might consider caching all the track gameObjects for performance */
@@ -54,7 +54,7 @@ public class Reticle : MonoBehaviour {
 			if(hit.collider.tag == "Note")
 			{             
 				// Debug.Log(hit.collider.name);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-				// Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.yellow, 2);
+				 Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.yellow, 2);
 
 				if (Input.GetMouseButtonDown(0))
 				{
@@ -64,6 +64,18 @@ public class Reticle : MonoBehaviour {
 					GameObject.Find(hit.collider.name).GetComponent("NoteBehaviour").SendMessage("ActivateNote", SendMessageOptions.DontRequireReceiver);
 				}
 			} 
+
+			/* If the swithc is hit by the ray */
+			if(hit.collider.tag == "Switch")
+			{  
+				Debug.DrawLine(CameraFacing.transform.position, hit.point, Color.green, 2);
+
+				if (Input.GetMouseButtonDown(0))
+				{
+					hit.collider.gameObject.audio.Play();
+					GameObject.Find("Vinyl").GetComponent("PlayVinyl").SendMessage("changeTrack", SendMessageOptions.DontRequireReceiver);
+				}
+			}
 		}
 	}
 }
