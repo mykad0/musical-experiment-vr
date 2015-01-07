@@ -61,14 +61,16 @@ public class SwitchMode : MonoBehaviour {
 
 			if (gestureListener.IsSwipeUp()) {
 				if (playMode) {
-					transform.Rotate (-90, 0, 0, Space.World);
-					transform.Translate (0, 2, 2, Space.World);
+					if(!moving){
+						StartCoroutine(MoveToWriting());
+					}
 					playMode = ! playMode;
 				} 
 			} else if (gestureListener.IsSwipeDown()) {
 				if (!playMode) {
-					transform.Rotate (90, 0, 0, Space.World);
-					transform.Translate (0, -2, -2, Space.World);
+					if(!moving){
+						StartCoroutine(MoveToPlay());
+					}
 					playMode = ! playMode;
 				}
 			}

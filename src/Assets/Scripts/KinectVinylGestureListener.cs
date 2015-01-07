@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System;
 
@@ -34,7 +34,10 @@ public class KinectVinylGestureListener : MonoBehaviour, KinectGestures.GestureL
 	// Invoked when a new user is detected and tracking starts
 	// Here you can start gesture detection with KinectManager.DetectGesture()
 	public void UserDetected(uint userId, int userIndex){
-				// detect these user specific gestures
+			
+		Debug.Log ("Swipe up or down to switch mode");
+
+		// detect these user specific gestures
 				KinectManager manager = KinectManager.Instance;
 
 				manager.DetectGesture(userId, KinectGestures.Gestures.SwipeUp);
@@ -42,6 +45,7 @@ public class KinectVinylGestureListener : MonoBehaviour, KinectGestures.GestureL
 		
 				if (GestureInfo != null) {
 						GestureInfo.guiText.text = "Swipe up or down to switch mode";
+
 				}
 		}
 	
@@ -63,8 +67,8 @@ public class KinectVinylGestureListener : MonoBehaviour, KinectGestures.GestureL
 	// Returns true, if the gesture detection must be restarted, false otherwise
 	public bool GestureCompleted(uint userId, int userIndex, KinectGestures.Gestures gesture,
 	                      KinectWrapper.SkeletonJoint joint, Vector3 screenPos){
-		
 		string sGestureText = gesture + " detected";
+		Debug.Log ("ALLLLLEEEEEEZZ!");
 		if(GestureInfo != null)
 		{
 			GestureInfo.guiText.text = sGestureText;
@@ -74,9 +78,9 @@ public class KinectVinylGestureListener : MonoBehaviour, KinectGestures.GestureL
 			swipeUp = true;
 		else if(gesture == KinectGestures.Gestures.SwipeDown)
 			swipeDown = true;
-	
+		
 		return true;
-	}
+		}
 	
 	// Invoked if a gesture is cancelled.
 	// Returns true, if the gesture detection must be retarted, false otherwise

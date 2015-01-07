@@ -1018,6 +1018,10 @@ public class KinectManager : MonoBehaviour
 		// get the main camera rectangle
 		Rect cameraRect = Camera.main.pixelRect;
 		
+		/*Camera[] C = Camera.allCameras;
+		Debug.Log(C[0].name);
+		Rect cameraRect = C[0].pixelRect;*/
+		
 		// calculate map width and height in percent, if needed
 		if(DisplayMapsWidthPercent == 0f)
 		{

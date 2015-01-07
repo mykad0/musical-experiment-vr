@@ -97,7 +97,6 @@
      <Compile Include="Assets\Scripts\coolviz\musicScript.cs" />
      <Compile Include="Assets\Scripts\coolviz\particleScript.cs" />
      <Compile Include="Assets\Scripts\coolviz\playerMove.cs" />
-     <Compile Include="Assets\TrackSwitch.cs" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\CreateScriptDialog\SmartScriptTemplates\MonoBehaviour.cs.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
@@ -204,7 +203,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Isaac/Documents/GitHub/musical-experiment-vr/src/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Isaac/Desktop/VI50 OP/src/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
